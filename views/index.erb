@@ -83,6 +83,24 @@
           expirationDate: {
             selector: "#card-exp"
           },
+          styles: {
+            "input": {
+              "font-size": "16pt",
+              "color": "#3A3A3A"
+            },
+            ".number": {
+              "font-family": "monospace"
+            },
+            ":focus": {
+              "color": "blue"
+            },
+            ".valid": {
+              "color": "green"
+            },
+            ".invalid": {
+              "color": "red"
+            },
+          },
           onFieldEvent: function (event) {
 
             if(event.isValid){
