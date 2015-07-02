@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>A Braintree Dropin Payments Example</title>
-    <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.15.min.js"></script>
+    <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.17.min.js"></script>
     <script src="/components/jquery/dist/jquery.js"></script>
     <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' href='/components/bootstrap/dist/css/custom.css'>
@@ -42,6 +42,11 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="input-group col-md-6">
+            <div id="paypal-container"></div>
+          </div>
+        </div>
 
         <div class="row">
           <div id='checkout'>
@@ -73,6 +78,9 @@
 
       braintree.setup("<%= @client_token %>", "custom", {
         id: "hostedform",
+        paypal: {
+            container: "paypal-container",
+        },
         hostedFields: {
           number: {
             selector: "#card-number"
